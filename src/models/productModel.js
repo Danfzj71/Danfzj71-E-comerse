@@ -1,12 +1,12 @@
 const db = require('./sqlite');
 
 const Product = {
+    // Método para obtener todos los productos
     getAll: (callback) => {
         db.all("SELECT * FROM products", [], callback);
     },
-    getById: (id, callback) => {
-        db.get("SELECT * FROM products WHERE id = ?", [id], callback);
-    },
+
+    // El método create que ya teníamos
     create: (data, callback) => {
         const { name, description, price, image_url } = data;
         db.run(
@@ -17,4 +17,5 @@ const Product = {
     }
 };
 
+// ¡MUY IMPORTANTE! Sin esto, el controlador recibirá un objeto vacío
 module.exports = Product;
