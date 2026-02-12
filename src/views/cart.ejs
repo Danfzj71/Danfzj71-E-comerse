@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+
+<main class="container">
+    <h2>Tu Carrito</h2>
+
+    <% if (items && items.length > 0) { %>
+        <div class="cart-container">
+            <% items.forEach(item => { %>
+                <div class="cart-item">
+                    <h4><%= item.name %></h4>
+                    <p>Precio: $<%= item.price %></p>
+                    <p>Cantidad: <%= item.quantity %></p>
+                    <form action="/cart/delete/<%= item.id %>" method="POST">
+                        <button type="submit" class="btn-delete">Eliminar</button>
+                    </form>
+                </div>
+            <% }) %>
+            <div class="total">
+                <h3>Total: $<%= total.toFixed(2) %></h3>
+                <button class="btn-main">Pagar ahora</button>
+            </div>
+        </div>
+    <% } else { %>
+        <p>Tu carrito está vacío. <a href="/">¡Mira nuestros productos!</a></p>
+    <% } %>
+</main>
+
+<%- include('partials/footer') %>

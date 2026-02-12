@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+
+<main class="container">
+    <div class="hero">
+        <h1>Bienvenido a nuestra tienda</h1>
+        <p>Productos de calidad a un click.</p>
+    </div>
+
+    <div class="product-grid">
+        <% if (listaProductos.length > 0) { %>
+            <% listaProductos.forEach(producto => { %>
+                <div class="product-card">
+                    <img src="<%= producto.image_url %>" alt="<%= producto.name %>" onerror="this.src='https://via.placeholder.com/150'">
+                    <h3><%= producto.name %></h3>
+                    <p class="price">$<%= producto.price.toFixed(2) %></p>
+                    
+                    <div class="actions">
+                        <a href="/producto/<%= producto.id %>" class="btn-secondary">Detalles</a>
+                        
+                        <form action="/cart/add" method="POST" style="display:inline;">
+                            <input type="hidden" name="productId" value="<%= producto.id %>">
+                            <button type="submit" class="btn-cart">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <div class="no-products">
+                <p>Aún no hay productos en la base de datos.</p>
+            </div>
+        <% } %>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

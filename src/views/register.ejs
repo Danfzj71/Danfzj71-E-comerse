@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+<main class="container">
+    <div class="auth-form">
+        <h2>Crear Cuenta</h2>
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <label>Nombre de Usuario:</label>
+                <input type="text" name="username" required>
+            </div>
+            <div class="form-group">
+                <label>Correo Electrónico:</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>Contraseña:</label>
+                <input type="password" name="password" required>
+                <small>Usaremos encriptación segura para tu clave.</small>
+            </div>
+            <button type="submit" class="btn-main">Registrarse</button>
+        </form>
+        <p>¿Ya tienes cuenta? <a href="/login">Inicia sesión aquí</a></p>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

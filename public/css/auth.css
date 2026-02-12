@@ -1,0 +1,7 @@
+.form-container { max-width: 400px; margin: 60px auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.form-container h2 { margin-bottom: 20px; text-align: center; color: #2c3e50; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
+.form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+.btn-block { width: 100%; background: #2c3e50; color: white; border: none; padding: 12px; border-radius: 5px; cursor: pointer; font-size: 1rem; }
+.btn-block:hover { background: #34495e; }

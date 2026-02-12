@@ -1,0 +1,5 @@
+.cart-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; }
+.cart-table th { background: #ecf0f1; padding: 15px; text-align: left; }
+.cart-table td { padding: 15px; border-bottom: 1px solid #eee; }
+.cart-total { text-align: right; margin-top: 20px; font-size: 1.5rem; font-weight: bold; }
+.btn-delete { color: #e74c3c; background: none; border: none; cursor: pointer; }
