@@ -49,15 +49,16 @@ app.use((req, res, next) => {
 });
 
 // --- RUTAS ---
+const adminRoute = require('./src/routes/adminRoute');
 const indexRoute = require('./src/routes/indexRoute');
 const authRoute = require('./src/routes/authRoute');
 const cartRoute = require('./src/routes/cartRoute');
-const adminRoute = require('./src/routes/adminRoute');
 
+
+app.use('/admin', adminRoute);
 app.use('/', indexRoute);
 app.use('/', authRoute);
 app.use('/', cartRoute);
-app.use('/admin', adminRoute);
 
 
 // --- PUERTO Y LANZAMIENTO ---

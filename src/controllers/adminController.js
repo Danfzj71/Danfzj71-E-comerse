@@ -1,4 +1,5 @@
 const Product = require('../models/productModel');
+const db = require('../models/sqlite');
 
 const adminController = {
     // ... showAddProduct ...
@@ -20,7 +21,20 @@ const adminController = {
             if (err) return res.send("Error al guardar");
             res.redirect('/');
         });
+    },
+
+    deleteProduct: (req, res) => {
+    const id = req.params.id;
+        db.run("DELETE FROM products WHERE id = ?", [id], (err) => {
+            if (err) {
+                console.error("Error al eliminar producto:", err);
+                return res.redirect('/?error=no-se-pudo-eliminar');
+            }
+        res.redirect('/'); // Redirigimos al inicio para ver que ya no está
+        });
     }
+
 };
 
 module.exports = adminController;
+

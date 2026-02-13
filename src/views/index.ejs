@@ -15,16 +15,28 @@
                     <h3><%= producto.name %></h3>
                     <p class="price">$<%= producto.price.toFixed(2) %></p>
                     
+                <div class="actions">
                     <div class="actions">
-                        <a href="/producto/<%= producto.id %>" class="btn-secondary">Detalles</a>
-                        
-                        <form action="/cart/add" method="POST" style="display:inline;">
-                            <input type="hidden" name="productId" value="<%= producto.id %>">
-                            <button type="submit" class="btn-cart">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
-                        </form>
-                    </div>
+    <a href="/product/<%= producto.id %>" class="btn-detail">Detalles</a>
+
+    <% if (user && role !== 'admin') { %> 
+        <form action="/cart/add" method="POST" style="display:inline;">
+            <input type="hidden" name="productId" value="<%= producto.id %>">
+            <button type="submit" class="btn-cart">
+                <i class="fas fa-cart-plus"></i>
+            </button>
+        </form>
+    <% } %>
+
+    <% if (role === 'admin') { %>
+        <form action="/admin/delete-product/<%= producto.id %>" method="POST" onsubmit="return confirm('¿Estás seguro?')" style="display:inline;">
+            <button type="submit" class="btn-delete">
+                <i class="fas fa-trash"></i> Eliminar
+            </button>
+        </form>
+    <% } %>
+</div>
+                </div>
                 </div>
             <% }); %>
         <% } else { %>
