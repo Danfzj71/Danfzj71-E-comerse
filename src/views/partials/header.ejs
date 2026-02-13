@@ -12,7 +12,7 @@
 
     <nav class="navbar">
         <div class="logo">
-            <a href="/">🚀 AIScomerce</a>
+            <a href="/"> AIScomerce</a>
         </div>
         <ul class="nav-links">
     <li><a href="/">Inicio</a></li>
@@ -20,7 +20,7 @@
     <% if (user) { %>
         <% if (role === 'admin') { %>
             <li>
-                <a href="/admin/add-product" class="btn-admin">
+                <a href="/add-product" class="btn-admin">
                     <i class="fas fa-tools"></i> Panel Control
                 </a>
             </li>
@@ -32,7 +32,7 @@
                 <span class="cart-count">0</span>
             </a>
         </li>
-        <li><span>Hola, <strong><%= user %></strong></span></li>
+        <span class="cart-count"><%= cartCount %></span>
         <li><a href="/logout" class="btn-exit">Salir</a></li>
     <% } else { %>
         <li><a href="/login">Entrar</a></li>

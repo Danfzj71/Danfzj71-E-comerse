@@ -10,7 +10,7 @@
             </div>
         <% } %>
 
-        <form action="/admin/add-product" method="POST">
+        <form action="/add-product" method="POST">
             <div class="form-group">
                 <label for="name">Nombre del Producto</label>
                 <input type="text" id="name" name="name" placeholder="Ej: Laptop Gamer" required>
@@ -22,10 +22,10 @@
             </div>
 
             <div class="form-group">
-                <label for="image_url">URL de la Imagen</label>
-                <input type="url" id="image_url" name="image_url" placeholder="https://ejemplo.com/foto.jpg" required>
+                <label for="image">Imagen del Producto</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
             </div>
-
+            
             <div class="form-group">
                 <label for="description">Descripción</label>
                 <textarea id="description" name="description" rows="4" placeholder="Detalles del producto..." required></textarea>
