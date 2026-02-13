@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<main class="container detail-container">
+    <div class="product-detail-flex">
+        <div class="detail-image">
+            <img src="<%= producto.image_url %>" alt="<%= producto.name %>">
+        </div>
+        <div class="detail-info">
+            <h1><%= producto.name %></h1>
+            <p class="detail-price">$<%= producto.price %></p>
+            <p class="detail-description"><%= producto.description %></p>
+            
+            <form action="/cart/add" method="POST">
+                <input type="hidden" name="productId" value="<%= producto.id %>">
+                <button type="submit" class="btn-block">Añadir al Carrito</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

@@ -32,3 +32,69 @@ footer { background: #2c3e50; color: white; text-align: center; padding: 2rem 0;
     color: #e74c3c !important; /* Color rojo para salir */
     font-weight: 600;
 }
+
+/* Contenedor principal de detalles */
+.detail-container {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.product-detail-flex {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Lado de la Imagen */
+.detail-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.detail-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Lado de la Información */
+.detail-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.detail-info h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.detail-price {
+    font-size: 1.8rem;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.detail-description {
+    line-height: 1.6;
+    color: #7f8c8d;
+    font-size: 1.1rem;
+}
+
+/* Adaptabilidad para móviles */
+@media (max-width: 768px) {
+    .product-detail-flex {
+        flex-direction: column;
+    }
+    .detail-image {
+        max-width: 100%;
+    }
+}

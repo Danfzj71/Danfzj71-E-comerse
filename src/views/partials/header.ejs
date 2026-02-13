@@ -10,34 +10,33 @@
     <link rel="stylesheet" href="/css/auth.css">
     <link rel="stylesheet" href="/css/cart.css">
 
-    <nav class="navbar">
+     <nav class="navbar">
         <div class="logo">
             <a href="/"> AIScomerce</a>
         </div>
         <ul class="nav-links">
-    <li><a href="/">Inicio</a></li>
+            <li><a href="/">Inicio</a></li>
     
-    <% if (user) { %>
-        <% if (role === 'admin') { %>
-            <li>
-                <a href="/add-product" class="btn-admin">
-                    <i class="fas fa-tools"></i> Panel Control
-                </a>
-            </li>
-        <% } %>
+            <% if (user) { %>
+                <li class="user-greeting">
+                    <i class="fas fa-user"></i> <%= user %> 
+                </li>
 
-        <li class="cart-icon">
-            <a href="/cart">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">0</span>
-            </a>
-        </li>
-        <span class="cart-count"><%= cartCount %></span>
-        <li><a href="/logout" class="btn-exit">Salir</a></li>
-    <% } else { %>
-        <li><a href="/login">Entrar</a></li>
-        <li><a href="/register">Registrarse</a></li>
-    <% } %>
-</ul>
+            <% if (role === 'admin') { %>
+                <li><a href="/admin/add-product" class="btn-admin">Panel Control</a></li>
+            <% } %>
+
+                <li class="cart-icon">
+                    <a href="/cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count"><%= cartCount %></span>
+                    </a>
+                </li>
+                <li><a href="/logout" class="btn-exit">Salir</a></li>
+            <% } else { %>
+                <li><a href="/login">Entrar</a></li>
+                <li><a href="/register">Registrarse</a></li>
+            <% } %>
+        </ul>
     </nav>
 </header>
