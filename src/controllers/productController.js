@@ -14,7 +14,7 @@ const productController = {
             if (err || !producto) {
                 return res.redirect('/');
             }
-            res.render('product-detail', { producto: producto });
+            res.render('product-detail', { producto: producto });//corección del nombre de la vista y la variable que se le pasa
             //res.render('product-detail', { producto });
         });
     }
