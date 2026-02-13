@@ -57,8 +57,8 @@ const adminRoute = require('./src/routes/adminRoute');
 app.use('/', indexRoute);
 app.use('/', authRoute);
 app.use('/', cartRoute);
-//app.use('/admin', adminRoute);
-app.use('/', adminRoute);
+app.use('/admin', adminRoute);
+//app.use('/', adminRoute);
 
 // --- PUERTO Y LANZAMIENTO ---
 const PORT = process.env.PORT || 4000;
