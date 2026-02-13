@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const db = require('../models/sqlite'); // Asegúrate de que esta ruta sea correcta según tu estructura de carpetas
+const db = require('../models/sqlite'); 
 
 const authController = {
     register: async (req, res) => {
