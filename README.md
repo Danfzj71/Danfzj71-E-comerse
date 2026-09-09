@@ -20,4 +20,4 @@ Asegúrate de tener instalado:
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/Danfzj71/Danfzj71-E-comerse.git
+   git clone https://github.com/Danfzj71/Danfzj71-E-comerse
